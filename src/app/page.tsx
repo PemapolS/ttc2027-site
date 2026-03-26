@@ -94,7 +94,7 @@ export default function Home() {
             </div>
 
             <div className="pb-2 text-left md:pb-6">
-              <div className="inline-block rounded-2xl border border-white/10 bg-black/45 px-5 py-4 backdrop-blur-sm shadow-[0_10px_40px_rgba(0,0,0,0.45)] md:px-6 md:py-5">
+              <div className="w-full max-w-[620px] min-h-[300px] rounded-2xl border border-white/10 bg-black/45 px-5 py-4 backdrop-blur-sm shadow-[0_10px_40px_rgba(0,0,0,0.45)] md:px-6 md:py-5">
               <p className="mb-1 text-xl font-semibold text-lime-300 drop-shadow-[0_2px_2px_rgba(0,0,0,0.65)] lg:text-2xl">{lang === 'th' ? 'ไทยเทลส์ : ไบนารี่ บรีช' : 'THAITAILS : BINARY BREACH'}</p>
               <p className="text-4xl font-extrabold leading-tight text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.7)] lg:text-6xl">
                 {lang === 'th' ? 'ไทยเทลส์' : 'THAITAILS'} <span className="text-lime-300">2027</span>
