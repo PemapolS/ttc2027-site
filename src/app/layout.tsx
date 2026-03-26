@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Kanit } from "next/font/google";
 import "./globals.css";
 import { I18nProvider } from "@/lib/i18n";
 
@@ -14,9 +15,15 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
+const kanit = Kanit({
+  subsets: ["latin", "thai"],
+  variable: "--font-kanit",
+  weight: ["300", "400", "500", "600", "700", "800"],
+});
+
 export const metadata: Metadata = {
   title: "Thaitails Convention 2027",
-  description: "Where Furries Meet in the Land of Smiles — August 2027, Bangkok, Thailand",
+  description: "Thaitails Convention 2027 Official Website",
 };
 
 export default function RootLayout({
@@ -26,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased bg-slate-950 text-white`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${kanit.variable} font-sans antialiased bg-slate-950 text-white`}>
         <I18nProvider>
           {children}
         </I18nProvider>

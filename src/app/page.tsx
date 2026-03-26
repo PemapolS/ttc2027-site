@@ -1,93 +1,86 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
 import { useI18n } from '@/lib/i18n';
+import bgBack from '../assets/img/BG_BACK.png';
+import bgFront from '../assets/img/BG_FRONT.png';
+import binaryBreachColor from '../assets/icons/Binary_Breach_Color.png';
 
 export default function Home() {
   const { t } = useI18n();
 
   return (
-    <div className="min-h-screen bg-slate-950">
+    <div className="min-h-screen bg-black text-white">
       <Navbar />
-      <main>
-        {/* Hero Section */}
-        <section className="relative min-h-[calc(100vh-4rem)] flex items-center justify-center overflow-hidden">
-          {/* Gradient background */}
-          <div className="absolute inset-0 bg-gradient-to-br from-indigo-950 via-purple-950 to-slate-950" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-indigo-800/20 via-transparent to-transparent" />
-          {/* Decorative circles */}
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-indigo-600/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-purple-600/10 rounded-full blur-3xl" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-amber-500/5 rounded-full blur-3xl" />
 
-          <div className="relative z-10 text-center px-4 py-16 max-w-4xl mx-auto">
-            {/* Paw print decorations */}
-            <div className="flex justify-center gap-2 mb-6 text-amber-400/60 text-2xl">
-              <span>🐾</span><span>🌸</span><span>🐾</span>
+      <main className="relative h-[calc(100vh-5rem)] min-h-[640px] overflow-hidden">
+        <Image
+          src={bgBack}
+          alt=""
+          priority
+          fill
+          sizes="100vw"
+          className="object-cover"
+        />
+        {/* <Image
+          src={bgMiddle}
+          alt=""
+          priority
+          fill
+          sizes="100vw"
+          className="object-cover"
+        /> */}
+        <Image
+          src={bgFront}
+          alt=""
+          priority
+          fill
+          sizes="100vw"
+          className="object-cover"
+        />
+
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/10" />
+
+        <div className="relative z-10 mx-auto flex h-full w-full max-w-[1400px] items-end px-4 pb-10 sm:px-6 md:pb-14 lg:px-8">
+          <div className="grid w-full items-end gap-8 md:grid-cols-[1.2fr_1fr]">
+            <div className="max-w-[760px]">
+              <Image
+                src={binaryBreachColor}
+                alt="Binary Breach"
+                priority
+                className="h-auto w-full"
+              />
             </div>
 
-            {/* Convention name */}
-            <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold mb-4 leading-tight">
-              <span className="text-white">Thaitails</span>
-              <br />
-              <span className="text-amber-400">Convention</span>
-              <br />
-              <span className="text-indigo-300">2027</span>
-            </h1>
+            <div className="pb-2 text-left md:pb-6">
+              <p className="mb-1 text-xl font-semibold text-lime-300 lg:text-2xl">{t.heroThemeName}</p>
+              <h1 className="text-4xl font-extrabold leading-tight lg:text-6xl">
+                {t.heroMainTitlePrefix} <span className="text-lime-300">{t.heroMainTitleYear}</span>
+              </h1>
+              {/* <p className="text-3xl font-black uppercase tracking-wide lg:text-5xl">{t.heroMainDate}</p> */}
+              {/* <p className="mt-2 text-xl font-bold leading-snug text-gray-200 lg:text-4xl">
+                {t.heroVenue}
+              </p> */}
 
-            {/* Tagline */}
-            <p className="text-xl sm:text-2xl text-indigo-200 mb-6 font-light italic">
-              {t.heroTagline}
-            </p>
-
-            {/* Date */}
-            <div className="inline-flex items-center gap-2 bg-indigo-800/50 border border-indigo-600/50 rounded-full px-6 py-2 mb-10">
-              <span className="text-amber-400">📅</span>
-              <span className="text-indigo-100 font-medium">{t.heroDate}</span>
-            </div>
-
-            {/* CTA Button */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/register"
-                className="inline-flex items-center justify-center gap-2 bg-amber-400 hover:bg-amber-300 text-indigo-950 font-bold text-lg px-8 py-4 rounded-full transition-all transform hover:scale-105 shadow-lg shadow-amber-400/25"
-              >
-                {t.heroButton}
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-              </Link>
-              <Link
-                href="/events"
-                className="inline-flex items-center justify-center gap-2 bg-indigo-800/50 hover:bg-indigo-700/50 border border-indigo-600 text-indigo-100 hover:text-white font-semibold text-lg px-8 py-4 rounded-full transition-all"
-              >
-                {t.events}
-              </Link>
+              <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-end sm:justify-end sm:gap-6">
+                <Link
+                  href="https://my.thaitails.net/"
+                  className="inline-flex w-full max-w-[320px] shrink-0 items-center justify-center bg-pink-500 px-8 text-center text-3xl font-extrabold leading-[1.05] text-white hover:bg-pink-400 h-[80px] sm:w-[360px] lg:w-[420px]"
+                >
+                  {t.registerHere}
+                </Link>
+                <Link
+                  href="https://my.thaitails.net/login"
+                  className="inline-flex w-full max-w-[240px] shrink-0 items-center justify-center bg-black px-8 text-3xl font-extrabold leading-none text-white hover:bg-neutral-900 h-[80px] sm:w-[260px] lg:w-[300px]"
+                >
+                  {t.login}
+                </Link>
+              </div>
             </div>
           </div>
-        </section>
-
-        {/* Quick links section */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {[
-              { href: '/register', label: t.register, icon: '🎫', desc: 'Register for TTC2027' },
-              { href: '/venue', label: t.venue, icon: '🏨', desc: 'Venue & accommodations' },
-              { href: '/events', label: t.events, icon: '🎉', desc: 'Events & activities' },
-            ].map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="group flex flex-col items-center text-center p-8 bg-indigo-900/30 hover:bg-indigo-800/40 border border-indigo-800/50 hover:border-indigo-600 rounded-2xl transition-all"
-              >
-                <span className="text-4xl mb-4">{item.icon}</span>
-                <h3 className="text-xl font-bold text-amber-400 mb-2 group-hover:text-amber-300">{item.label}</h3>
-                <p className="text-indigo-300 text-sm">{item.desc}</p>
-              </Link>
-            ))}
-          </div>
-        </section>
+        </div>
       </main>
     </div>
   );
