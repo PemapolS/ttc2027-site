@@ -170,6 +170,20 @@ export default function Navbar() {
   const { lang, setLang, t } = useI18n();
   const [mobileOpen, setMobileOpen] = useState(false);
 
+  useEffect(() => {
+    if (!mobileOpen) {
+      document.body.style.overflow = '';
+      return;
+    }
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [mobileOpen]);
+
   const registerItems = [
     { href: '/register/tickets', label: t.tickets },
     { href: '/register/badge-pickup', label: t.badgePickup },
@@ -236,6 +250,7 @@ export default function Navbar() {
               className="mr-4 md:hidden p-2 rounded-md text-white/80 hover:text-white hover:bg-white/10"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle menu"
+              aria-expanded={mobileOpen}
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 {mobileOpen
@@ -250,8 +265,12 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-black border-t border-white/10 px-4 pb-4">
-          <div className="pt-2 space-y-1">
+        <div
+          className="fixed inset-x-0 top-20 bottom-0 z-40 border-t border-white/10 bg-black/95 backdrop-blur-sm md:hidden"
+          style={{ WebkitOverflowScrolling: 'touch' }}
+        >
+          <div className="h-full overflow-y-auto overscroll-contain px-4 pb-4 pt-2 [touch-action:pan-y]">
+            <div className="space-y-1">
             <div className="flex gap-2 pb-3">
               <button
                 onClick={() => setLang(lang === 'th' ? 'en' : 'th')}
@@ -286,6 +305,7 @@ export default function Navbar() {
                 {item.label}
               </Link>
             ))}
+            </div>
           </div>
         </div>
       )}
