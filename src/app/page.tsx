@@ -7,9 +7,19 @@ import bgBack from '../assets/img/BG_BACK.png';
 import bgMiddle from '../assets/img/BG_MIDDLE.png';
 import bgFront from '../assets/img/BG_FRONT.png';
 import binaryBreachColor from '../assets/icons/Binary_Breach_Color.png';
+import { useEffect, useState } from 'react';
 
 export default function Home() {
   const { t } = useI18n();
+    const [middleReady, setMiddleReady] = useState(false);
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => {
+      setMiddleReady(true);
+    }, 220);
+
+    return () => window.clearTimeout(timer);
+  }, []);
 
   return (
     <div className="bg-black text-white">
