@@ -28,7 +28,7 @@ export default function Home() {
           priority
           fill
           sizes="100vw"
-          className="object-cover"
+          className={`object-cover will-change-transform transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${middleReady ? 'opacity-100 scale-100 blur-0' : 'opacity-0 scale-[1.45] blur-md'}`}
         />
         {/* <Image
           src={bgFront}
