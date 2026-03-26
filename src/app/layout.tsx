@@ -1,8 +1,14 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Kanit } from "next/font/google";
+import { Anuphan } from "next/font/google";
+import "@fortawesome/fontawesome-svg-core/styles.css";
 import "./globals.css";
 import { I18nProvider } from "@/lib/i18n";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import { config } from "@fortawesome/fontawesome-svg-core";
+
+config.autoAddCss = false;
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -15,10 +21,10 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-const kanit = Kanit({
+const anuphan = Anuphan({
   subsets: ["latin", "thai"],
-  variable: "--font-kanit",
-  weight: ["300", "400", "500", "600", "700", "800"],
+  variable: "--font-anuphan",
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -33,9 +39,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} ${kanit.variable} font-sans antialiased bg-slate-950 text-white`}>
+      <body className={`${anuphan.className} ${geistSans.variable} ${geistMono.variable} ${anuphan.variable} min-h-screen font-sans antialiased bg-slate-950 text-white`}>
         <I18nProvider>
-          {children}
+          <div className="flex min-h-screen flex-col">
+            <Navbar />
+            <main className="flex-1 pt-20">{children}</main>
+            <Footer />
+          </div>
         </I18nProvider>
       </body>
     </html>

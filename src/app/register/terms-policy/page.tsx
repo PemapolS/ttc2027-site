@@ -1,8 +1,10 @@
-'use client';
 import PageLayout from '@/components/PageLayout';
 import ComingSoon from '@/components/ComingSoon';
-import { useI18n } from '@/lib/i18n';
+
 export default function TermsPolicyPage() {
-  const { t } = useI18n();
-  return <PageLayout title={t.termsPolicy}><ComingSoon /></PageLayout>;
+  return (
+    <PageLayout title="Terms and Policy">
+      <ComingSoon />
+    </PageLayout>
+  );
 }
