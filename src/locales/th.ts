@@ -34,7 +34,7 @@ const th: TranslationMessages = {
   heroDate: 'สิงหาคม 2027 • กรุงเทพมหานคร ประเทศไทย',
   heroButton: 'ลงทะเบียนเลย',
   heroThemeName: 'ไทยเทลส์ : ไบนารี่ บรีช',
-  heroMainTitlePrefix: 'THAITAILS',
+  heroMainTitlePrefix: 'ไทยเทลส์',
   heroMainTitleYear: '2027',
   heroMainDate: '20 - 21 MARCH 2027',
   heroVenue: 'ศูนย์ประชุมอุษาภักษ์ - ณ โรงแรม เซ็นทารา ไลฟ์ ศูนย์ราชการ',

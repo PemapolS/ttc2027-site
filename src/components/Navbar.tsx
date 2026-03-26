@@ -134,7 +134,7 @@ function NavDropdown({ label, items }: NavDropdownProps) {
       }}
     >
       <button
-        className="flex items-center gap-1 px-2 py-2 text-xl font-semibold text-white/90 hover:text-white transition-colors"
+        className="flex w-full items-center justify-center gap-1 whitespace-nowrap px-2 py-2 text-xl font-semibold text-white/90 transition-colors hover:text-white"
         onClick={() => {
           clearCloseTimer();
           setOpen(!open);
@@ -221,20 +221,38 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-5">
-            <NavDropdown label={t.register} items={registerItems} />
-            <NavDropdown label={t.venue} items={venueItems} />
-            <NavDropdown label={t.events} items={eventsItems} />
-            <Link href="/register/tickets" className="px-2 py-2 text-xl font-semibold text-white/90 hover:text-white">
+          <div className="hidden md:flex items-center gap-3">
+            <div className="w-[138px]">
+              <NavDropdown label={t.register} items={registerItems} />
+            </div>
+            <div className="w-[110px]">
+              <NavDropdown label={t.venue} items={venueItems} />
+            </div>
+            <div className="w-[110px]">
+              <NavDropdown label={t.events} items={eventsItems} />
+            </div>
+            <Link
+              href="/register/tickets"
+              className="inline-flex w-[190px] items-center justify-center whitespace-nowrap px-2 py-2 text-xl font-semibold text-white/90 hover:text-white"
+            >
               {t.openRegistration} v
             </Link>
-            <button
-              onClick={() => setLang(lang === 'th' ? 'en' : 'th')}
-              className="px-2 py-2 text-xl font-semibold text-white/90 hover:text-white"
-              title={lang === 'th' ? t.switchToEnglishTitle : t.switchToThaiTitle}
-            >
-              {lang === 'th' ? t.switchToEnglish : t.switchToThai}
-            </button>
+            <div className="inline-flex items-center rounded-full border border-white/20 bg-black/60 p-1 backdrop-blur-sm">
+              <button
+                onClick={() => setLang('th')}
+                className={`rounded-full px-3 py-1 text-xs font-bold transition-colors ${lang === 'th' ? 'bg-pink-500 text-white' : 'text-white/80 hover:text-white'}`}
+                aria-label="Switch to Thai"
+              >
+                TH
+              </button>
+              <button
+                onClick={() => setLang('en')}
+                className={`rounded-full px-3 py-1 text-xs font-bold transition-colors ${lang === 'en' ? 'bg-pink-500 text-white' : 'text-white/80 hover:text-white'}`}
+                aria-label="Switch to English"
+              >
+                EN
+              </button>
+            </div>
           </div>
 
           {/* Right side */}
@@ -272,13 +290,22 @@ export default function Navbar() {
           <div className="h-full overflow-y-auto overscroll-contain px-4 pb-4 pt-2 [touch-action:pan-y]">
             <div className="space-y-1">
             <div className="flex gap-2 pb-3">
-              <button
-                onClick={() => setLang(lang === 'th' ? 'en' : 'th')}
-                className="rounded bg-white/10 px-3 py-1.5 text-sm font-semibold text-white"
-                title={lang === 'th' ? t.switchToEnglishTitle : t.switchToThaiTitle}
-              >
-                {lang === 'th' ? t.switchToEnglish : t.switchToThai}
-              </button>
+              <div className="inline-flex items-center rounded-full border border-white/20 bg-black/60 p-1 backdrop-blur-sm">
+                <button
+                  onClick={() => setLang('th')}
+                  className={`rounded-full px-3 py-1 text-xs font-bold transition-colors ${lang === 'th' ? 'bg-pink-500 text-white' : 'text-white/80 hover:text-white'}`}
+                  aria-label="Switch to Thai"
+                >
+                  TH
+                </button>
+                <button
+                  onClick={() => setLang('en')}
+                  className={`rounded-full px-3 py-1 text-xs font-bold transition-colors ${lang === 'en' ? 'bg-pink-500 text-white' : 'text-white/80 hover:text-white'}`}
+                  aria-label="Switch to English"
+                >
+                  EN
+                </button>
+              </div>
               <Link
                 href="/register"
                 className="rounded bg-pink-500 px-3 py-1.5 text-sm font-semibold text-white"
