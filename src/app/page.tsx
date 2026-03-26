@@ -27,8 +27,11 @@ export default function Home() {
   const [middleReady, setMiddleReady] = useState(false);
 
   useEffect(() => {
-    const raf = requestAnimationFrame(() => setMiddleReady(true));
-    return () => cancelAnimationFrame(raf);
+    const timer = window.setTimeout(() => {
+      setMiddleReady(true);
+    }, 220);
+
+    return () => window.clearTimeout(timer);
   }, []);
 
   return (
