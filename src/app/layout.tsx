@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Kanit } from "next/font/google";
+import { Anuphan } from "next/font/google";
 import "./globals.css";
 import { I18nProvider } from "@/lib/i18n";
 
@@ -15,10 +15,10 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-const kanit = Kanit({
+const anuphan = Anuphan({
   subsets: ["latin", "thai"],
-  variable: "--font-kanit",
-  weight: ["300", "400", "500", "600", "700", "800"],
+  variable: "--font-anuphan",
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -33,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} ${kanit.variable} font-sans antialiased bg-slate-950 text-white`}>
+      <body className={`${geistSans.variable} ${geistMono.variable} ${anuphan.variable} font-sans antialiased bg-slate-950 text-white`}>
         <I18nProvider>
           {children}
         </I18nProvider>
