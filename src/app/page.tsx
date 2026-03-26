@@ -13,7 +13,7 @@ import binaryBreachColor from '../assets/icons/Binary_Breach_Color.png';
 const socialLinks = [
   { href: 'https://www.facebook.com/thaitails', icon: faFacebookF, label: 'Facebook' },
   { href: 'https://x.com/thaitails', icon: faTwitter, label: 'Twitter' },
-  { href: 'https://discord.gg/thaitails', icon: faDiscord, label: 'Discord' },
+  { href: 'https://discord.gg/haXx46kRNn', icon: faDiscord, label: 'Discord' },
   { href: 'https://t.me/thaitailscon', icon: faTelegram, label: 'Telegram' },
 ];
 
