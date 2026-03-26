@@ -35,8 +35,8 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black text-white">
-      <main className="relative min-h-screen overflow-hidden">
+    <div className="h-screen overflow-hidden overscroll-none bg-black text-white">
+      <main className="relative h-full overflow-hidden overscroll-none">
         <Image
           src={bgBack}
           alt=""
@@ -82,7 +82,7 @@ export default function Home() {
           </button>
         </div>
 
-        <div className="relative z-10 mx-auto flex min-h-screen w-full max-w-[1400px] items-end px-4 pb-10 sm:px-6 md:pb-14 lg:px-8">
+        <div className="relative z-10 mx-auto flex h-full w-full max-w-[1400px] items-end px-4 pb-10 sm:px-6 md:pb-14 lg:px-8">
           <div className="grid w-full items-end gap-8 md:grid-cols-[1.2fr_1fr]">
             <div className="max-w-[760px]">
               <Image
