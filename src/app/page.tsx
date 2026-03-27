@@ -1,8 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
 import { useI18n } from '@/lib/i18n';
+import CTAButton from '@/components/CTAButton';
 import bgBack from '../assets/img/BG_BACK.png';
 import bgMiddle from '../assets/img/BG_MIDDLE.png';
 import bgFront from '../assets/img/BG_FRONT.png';
@@ -75,19 +75,19 @@ export default function Home() {
                 {t.heroVenue}
               </p>
 
-              <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-end sm:justify-end sm:gap-6">
-                <Link
+              <div className="mt-8 flex w-full flex-row flex-nowrap items-end justify-end gap-2 sm:gap-6">
+                <CTAButton
                   href="https://my.thaitails.net/"
-                  className="inline-flex w-full max-w-[320px] shrink-0 items-center justify-center bg-pink-500 px-8 text-center text-3xl font-extrabold leading-[1.05] text-white hover:bg-pink-400 h-[80px] sm:w-[360px] lg:w-[420px]"
+                  className="inline-flex h-12 w-[190px] shrink-0 items-center justify-center bg-pink-500 px-3 text-center text-lg font-extrabold leading-[1.05] text-white hover:bg-pink-400 sm:h-[80px] sm:w-[360px] sm:px-8 sm:text-3xl lg:w-[420px]"
                 >
                   {t.registerHere}
-                </Link>
-                <Link
+                </CTAButton>
+                <CTAButton
                   href="https://my.thaitails.net/login"
-                  className="inline-flex w-full max-w-[240px] shrink-0 items-center justify-center bg-black px-8 text-3xl font-extrabold leading-none text-white hover:bg-neutral-900 h-[80px] sm:w-[260px] lg:w-[300px]"
+                  className="inline-flex h-12 w-[110px] shrink-0 items-center justify-center bg-black px-3 text-lg font-extrabold leading-none text-white hover:bg-neutral-900 sm:h-[80px] sm:w-[260px] sm:px-8 sm:text-3xl lg:w-[300px]"
                 >
                   {t.login}
-                </Link>
+                </CTAButton>
               </div>
               </div>
             </div>
@@ -126,12 +126,12 @@ export default function Home() {
               <aside className="w-full rounded-xl border border-white/20 bg-black/55 p-4 text-white shadow-[0_8px_30px_rgba(0,0,0,0.45)] sm:p-5">
                 <h3 className="text-2xl font-extrabold uppercase leading-tight">{t.venueSectionBookingTitle}</h3>
                 <p className="mt-2 text-xl font-semibold italic leading-tight text-white/80">{t.venueSectionBookingDate}</p>
-                <Link
+                <CTAButton
                   href="/venue/hotel-reservation"
-                  className="mt-5 inline-flex h-14 w-full items-center justify-center rounded-md bg-pink-500 px-5 text-xl font-extrabold uppercase text-white transition-colors hover:bg-pink-400"
+                  className="mt-5 h-12 lg:h-14 w-full rounded-md bg-pink-500 px-5 text-xl uppercase hover:bg-pink-400"
                 >
                   {t.venueSectionReadMore}
-                </Link>
+                </CTAButton>
               </aside>
             </div>
           </div>

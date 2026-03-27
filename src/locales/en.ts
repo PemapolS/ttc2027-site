@@ -39,9 +39,9 @@ const en = {
   heroMainTitlePrefix: 'THAITAILS',
   heroMainTitleYear: '2027',
   heroMainDate: '20 - 21 MARCH 2027',
-  heroVenue: 'Vayupak Convention Center at Centara Life Government Complex Hotel',
+  heroVenue: 'TEST VENUE',
   venueSectionLabel: 'Venue',
-  venueSectionTitle: 'Centara Life Government Centre',
+  venueSectionTitle: 'TEST VENUE',
   venueSectionLocation: 'Bangkok, Thailand',
   venueSectionDescription:
     'The Centara Life Government Centre offers a spacious and modern setting within the Vayupak Convention Centre Hall. With comfortable facilities, convenient dining options, and easy access to key areas of Bangkok, it provides everything attendees need for a smooth and enjoyable experience.',
