@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import { useI18n } from '@/lib/i18n';
 import logoWhite from '../assets/icons/logo-white.png';
+import asset17 from '../assets/icons/Asset_17.png';
 
 interface DropdownItem {
   href: string;
@@ -211,6 +212,15 @@ export default function Navbar() {
     { href: '/events/after-party', label: t.afterParty },
   ];
 
+  const applicationItems = [
+    { href: '/register/volunteers', label: t.volunteers },
+    { href: '/register/art-submission', label: t.artSubmission },
+    { href: '/register/dealers-den-submission', label: t.dealersDenSubmission },
+    { href: '/register/talent-show-submission', label: t.talentShowSubmission },
+    { href: '/register/panel-submission', label: t.panelSubmission },
+    { href: '/register/dj-audition', label: t.djAudition },
+  ];
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 h-20 bg-[var(--header-black)]">
       <div className="h-full w-full">
@@ -221,7 +231,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden xl:flex items-center gap-3">
             <div className="w-[138px]">
               <NavDropdown label={t.register} items={registerItems} />
             </div>
@@ -231,12 +241,9 @@ export default function Navbar() {
             <div className="w-[110px]">
               <NavDropdown label={t.events} items={eventsItems} />
             </div>
-            <Link
-              href="/register/tickets"
-              className="inline-flex w-[190px] items-center justify-center whitespace-nowrap px-2 py-2 text-xl font-semibold text-white/90 hover:text-white"
-            >
-              {t.openRegistration} v
-            </Link>
+            <div className="w-[190px]">
+              <NavDropdown label={t.openRegistration} items={applicationItems} />
+            </div>
             <div className="inline-flex items-center rounded-full border border-white/20 bg-black/60 p-1 backdrop-blur-sm">
               <button
                 onClick={() => setLang('th')}
@@ -256,16 +263,25 @@ export default function Navbar() {
           </div>
 
           {/* Right side */}
-          <div className="flex h-full items-center md:w-[340px] lg:w-[380px]">
+          <div className="flex h-full items-center xl:w-[450px]">
             <Link
               href="/register"
-              className="pixel-block-transition hidden h-full w-full items-center justify-center bg-pink-500 pl-14 pr-5 text-2xl font-extrabold text-white hover:bg-pink-400 md:inline-flex lg:px-8 lg:pl-16 lg:text-3xl"
+              className="pixel-block-transition relative hidden h-full w-full items-center justify-center bg-pink-500 pl-40 pr-6 text-2xl font-extrabold text-white hover:bg-pink-400 xl:inline-flex xl:px-10 xl:pl-48 xl:text-3xl"
             >
-              {t.registerHere}
+              <span
+                aria-hidden
+                className="pointer-events-none absolute left-0 top-0 z-0 h-full w-[220px] overflow-hidden"
+              >
+                <span className="absolute left-[40px] top-1/2 flex -translate-y-1/2 items-center gap-2">
+                  <Image src={asset17} alt="" className="h-9 w-auto [image-rendering:pixelated] xl:h-14" />
+                  <Image src={asset17} alt="" className="h-9 w-auto [image-rendering:pixelated] xl:h-14" />
+                </span>
+              </span>
+              <span className="relative z-20 whitespace-nowrap text-lg xl:text-3xl">{t.registerHere}</span>
             </Link>
             {/* Mobile menu button */}
             <button
-              className="mr-4 md:hidden p-2 rounded-md text-white/80 hover:text-white hover:bg-white/10"
+              className="mr-4 xl:hidden p-2 rounded-md text-white/80 hover:text-white hover:bg-white/10"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle menu"
               aria-expanded={mobileOpen}
@@ -284,7 +300,7 @@ export default function Navbar() {
       {/* Mobile menu */}
       {mobileOpen && (
         <div
-          className="fixed inset-x-0 top-20 bottom-0 z-40 border-t border-white/10 bg-black/95 backdrop-blur-sm md:hidden"
+          className="fixed inset-x-0 top-20 bottom-0 z-40 border-t border-white/10 bg-black/95 backdrop-blur-sm xl:hidden"
           style={{ WebkitOverflowScrolling: 'touch' }}
         >
           <div className="h-full overflow-y-auto overscroll-contain px-4 pb-4 pt-2 [touch-action:pan-y]">

@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faTwitter, faDiscord, faTelegram } from '@fortawesome/free-brands-svg-icons';
+import { useI18n } from '@/lib/i18n';
 import logoWhite from '../assets/icons/logo-white.png';
 
 const socialLinks = [
@@ -14,12 +15,19 @@ const socialLinks = [
 ];
 
 export default function Footer() {
+  const { t } = useI18n();
+
   return (
     <footer className="border-t border-white/10 bg-black/90">
       <div className="mx-auto flex w-full max-w-[1400px] flex-col items-center justify-between gap-6 px-4 py-8 sm:px-6 md:flex-row lg:px-8">
-        <Link href="/" className="flex items-center" aria-label="Thaitails home">
-          <Image src={logoWhite} alt="Thaitails" className="h-auto w-[140px]" />
-        </Link>
+        <div className="flex flex-col items-center gap-2 md:items-start">
+          <Link href="/" className="flex items-center" aria-label="Thaitails home">
+            <Image src={logoWhite} alt="Thaitails" className="h-auto w-[140px]" />
+          </Link>
+          <p className="text-center text-sm text-white/70 md:text-left">
+            {t.footerMadeWithLove}
+          </p>
+        </div>
 
         <div className="flex items-center gap-3">
           {socialLinks.map((item) => (

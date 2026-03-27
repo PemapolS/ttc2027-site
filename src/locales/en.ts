@@ -21,7 +21,13 @@ const en = {
   talentShow: 'Talent Show',
   djParty: 'DJ Party',
   afterParty: 'After Party',
-  openRegistration: 'Open Registration',
+  openRegistration: 'Apply',
+  volunteers: 'Volunteers',
+  artSubmission: 'Art Submission',
+  dealersDenSubmission: "Dealer's Den Submission",
+  talentShowSubmission: 'Talent Show Submission',
+  panelSubmission: 'Panel Submission',
+  djAudition: 'DJ Audition',
   registerHere: 'Register Here',
   login: 'Login',
   switchToEnglish: 'ENGLISH',
@@ -38,6 +44,7 @@ const en = {
   heroVenue: 'Vayupak Convention Center at Centara Life Government Complex Hotel',
   comingSoon: 'Coming Soon',
   comingSoonDesc: 'This page is under construction. Check back soon!',
+  footerMadeWithLove: 'Made with ❤️ by the Thaitails Team',
   home: 'Home',
 };
 

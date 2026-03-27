@@ -16,6 +16,7 @@
 	.pixel-block-transition {
 		position: relative;
 		overflow: visible;
+		isolation: isolate;
 	}
 
 	.pixel-block-transition::before {
@@ -27,6 +28,7 @@
 		width: 56px;
 		background: var(--header-black);
 		clip-path: polygon(0 0, 100% 0, 100% 0%, 50% 0%, 50% 50%, 100% 50%, 100% 100%, 0 100%);
+		z-index: 10;
 		pointer-events: none;
 	}
 
@@ -38,6 +40,7 @@
 		width: 30px;
 		height: 30px;
 		background: var(--header-black);
+		z-index: 10;
 		pointer-events: none;
 	}
 }

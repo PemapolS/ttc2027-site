@@ -28,8 +28,8 @@ const anuphan = Anuphan({
 });
 
 export const metadata: Metadata = {
-  title: "Thaitails Convention 2027",
-  description: "Thaitails Convention 2027 Official Website",
+  title: "Thaitails 2027",
+  description: "Thaitails 2027 Official Website",
 };
 
 export default function RootLayout({

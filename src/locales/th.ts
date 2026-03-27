@@ -24,6 +24,12 @@ const th: TranslationMessages = {
   djParty: 'ดีเจปาร์ตี้',
   afterParty: 'อาฟเตอร์ปาร์ตี้',
   openRegistration: 'เปิดรับสมัคร',
+  volunteers: 'อาสาสมัคร',
+  artSubmission: 'ส่งผลงานศิลปะ',
+  dealersDenSubmission: 'สมัครดีลเลอร์เดน',
+  talentShowSubmission: 'สมัครการแสดงความสามารถ',
+  panelSubmission: 'สมัครแพนเนล',
+  djAudition: 'ออดิชั่นดีเจ',
   registerHere: 'ลงทะเบียนที่นี่',
   login: 'เข้าสู่ระบบ',
   switchToEnglish: 'ENGLISH',
@@ -40,6 +46,7 @@ const th: TranslationMessages = {
   heroVenue: 'ศูนย์ประชุมวายุภักษ์ ณ โรงแรม เซ็นทารา ไลฟ์ ศูนย์ราชการ',
   comingSoon: 'เร็วๆ นี้',
   comingSoonDesc: 'หน้านี้กำลังอยู่ระหว่างการพัฒนา กรุณากลับมาตรวจสอบในภายหลัง!',
+  footerMadeWithLove: 'จัดทำด้วย ❤️ โดยทีมไทยเทลส์',
   home: 'หน้าแรก',
 };
 
