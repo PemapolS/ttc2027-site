@@ -213,12 +213,12 @@ export default function Navbar() {
   ];
 
   const applicationItems = [
-    { href: '/register/volunteers', label: t.volunteers },
-    { href: '/register/art-submission', label: t.artSubmission },
-    { href: '/register/dealers-den-submission', label: t.dealersDenSubmission },
-    { href: '/register/talent-show-submission', label: t.talentShowSubmission },
-    { href: '/register/panel-submission', label: t.panelSubmission },
-    { href: '/register/dj-audition', label: t.djAudition },
+    { href: 'https://my.thaitails.net/volunteer', label: t.volunteers },
+    { href: 'https://my.thaitails.net/art', label: t.artSubmission },
+    { href: 'https://my.thaitails.net/dealerden', label: t.dealersDenSubmission },
+    { href: 'https://my.thaitails.net/talent', label: t.talentShowSubmission },
+    { href: 'https://my.thaitails.net/panel', label: t.panelSubmission },
+    { href: 'https://my.thaitails.net/dj', label: t.djAudition },
   ];
 
   return (
@@ -232,16 +232,16 @@ export default function Navbar() {
 
           {/* Desktop nav */}
           <div className="hidden xl:flex items-center gap-3">
-            <div className="w-[138px]">
+            <div className="w-[160px]">
               <NavDropdown label={t.register} items={registerItems} />
             </div>
-            <div className="w-[110px]">
+            <div className="w-[160px]">
               <NavDropdown label={t.venue} items={venueItems} />
             </div>
-            <div className="w-[110px]">
+            <div className="w-[160px]">
               <NavDropdown label={t.events} items={eventsItems} />
             </div>
-            <div className="w-[190px]">
+            <div className="w-[160px]">
               <NavDropdown label={t.openRegistration} items={applicationItems} />
             </div>
             <div className="inline-flex items-center rounded-full border border-white/20 bg-black/60 p-1 backdrop-blur-sm">
