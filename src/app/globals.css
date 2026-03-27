@@ -3,7 +3,41 @@
 @tailwind utilities;
 
 @layer base {
+	:root {
+		--header-black: #000000;
+	}
+
 	body {
 		font-family: var(--font-anuphan), sans-serif;
+	}
+}
+
+@layer components {
+	.pixel-block-transition {
+		position: relative;
+		overflow: visible;
+	}
+
+	.pixel-block-transition::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		height: 100%;
+		width: 56px;
+		background: var(--header-black);
+		clip-path: polygon(0 0, 100% 0, 100% 0%, 50% 0%, 50% 50%, 100% 50%, 100% 100%, 0 100%);
+		pointer-events: none;
+	}
+
+	.pixel-block-transition::after {
+		content: '';
+		position: absolute;
+		left: 55px;
+		bottom: -30px;
+		width: 30px;
+		height: 30px;
+		background: var(--header-black);
+		pointer-events: none;
 	}
 }

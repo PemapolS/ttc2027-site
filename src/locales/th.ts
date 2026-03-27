@@ -3,8 +3,8 @@ import type { TranslationMessages } from './en';
 const th: TranslationMessages = {
   siteName: 'TTC2027',
   register: 'ลงทะเบียน',
-  tickets: 'บัตร',
-  badgePickup: 'รับบัตร',
+  tickets: 'ซื้อบัตร',
+  badgePickup: 'การรับบัตรและของที่ระลึก',
   participantRoster: 'รายชื่อผู้เข้าร่วม',
   fursuitRoster: 'รายชื่อเฟอร์สูท',
   gallery: 'แกลเลอรี่',

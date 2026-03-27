@@ -212,7 +212,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 h-20 bg-black">
+    <nav className="fixed top-0 left-0 right-0 z-50 h-20 bg-[var(--header-black)]">
       <div className="h-full w-full">
         <div className="flex h-full items-center justify-between">
           {/* Logo */}
@@ -259,7 +259,7 @@ export default function Navbar() {
           <div className="flex h-full items-center md:w-[340px] lg:w-[380px]">
             <Link
               href="/register"
-              className="hidden h-full w-full items-center justify-center bg-pink-500 px-5 text-2xl font-extrabold text-white hover:bg-pink-400 md:inline-flex lg:px-8 lg:text-3xl"
+              className="pixel-block-transition hidden h-full w-full items-center justify-center bg-pink-500 pl-14 pr-5 text-2xl font-extrabold text-white hover:bg-pink-400 md:inline-flex lg:px-8 lg:pl-16 lg:text-3xl"
             >
               {t.registerHere}
             </Link>
