@@ -69,10 +69,10 @@ export default function Home() {
               <h1 className="text-4xl font-extrabold leading-tight [text-shadow:0_4px_16px_rgba(0,0,0,0.75)] lg:text-6xl">
                 {t.heroMainTitlePrefix} <span className="text-lime-300">{t.heroMainTitleYear}</span>
               </h1>
-              {/* <p className="text-3xl font-black uppercase tracking-wide lg:text-5xl">{t.heroMainDate}</p> */}
-              {/* <p className="mt-2 text-xl font-bold leading-snug text-gray-200 lg:text-4xl">
+              <p className="text-3xl font-black uppercase tracking-wide">{t.heroMainDate}</p>
+              <p className="mt-2 text-xl font-bold leading-snug text-gray-200 lg:text-2xl">
                 {t.heroVenue}
-              </p> */}
+              </p>
 
               <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-end sm:justify-end sm:gap-6">
                 <Link

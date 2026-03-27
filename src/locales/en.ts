@@ -35,7 +35,7 @@ const en = {
   heroMainTitlePrefix: 'THAITAILS',
   heroMainTitleYear: '2027',
   heroMainDate: '20 - 21 MARCH 2027',
-  heroVenue: 'Usapak Convention Center - Centara Life Government Complex Hotel',
+  heroVenue: 'Vayupak Convention Center at Centara Life Government Complex Hotel',
   comingSoon: 'Coming Soon',
   comingSoonDesc: 'This page is under construction. Check back soon!',
   home: 'Home',
