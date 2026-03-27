@@ -6,6 +6,7 @@ import { useI18n } from '@/lib/i18n';
 import bgBack from '../assets/img/BG_BACK.png';
 import bgMiddle from '../assets/img/BG_MIDDLE.png';
 import bgFront from '../assets/img/BG_FRONT.png';
+import centaraVenue from '../assets/img/Centara-Life-Conference-Center.jpg';
 import binaryBreachColor from '../assets/icons/Binary_Breach_Color.png';
 import { useEffect, useState } from 'react';
 
@@ -93,6 +94,63 @@ export default function Home() {
           </div>
         </div>
       </main>
+
+      <section className="relative overflow-hidden border-t border-white/10 bg-black py-14 sm:py-16">
+        <div
+          className="pointer-events-none absolute inset-0 opacity-70"
+          style={{
+            backgroundImage:
+              'radial-gradient(circle at 14% 12%, rgba(236,72,153,0.26), transparent 34%), radial-gradient(circle at 88% 18%, rgba(163,230,53,0.14), transparent 30%), linear-gradient(to bottom, rgba(255,255,255,0.04), rgba(0,0,0,0.45))',
+          }}
+        />
+
+        <div className="relative z-10 mx-auto w-full max-w-[1140px] px-4 sm:px-6 lg:px-8">
+          <p className="text-sm font-bold uppercase tracking-[0.3em] text-lime-300/95">{t.venueSectionLabel}</p>
+          <h2 className="mt-2 text-4xl font-extrabold uppercase leading-[1.03] text-white sm:text-5xl">{t.venueSectionTitle}</h2>
+          <p className="mt-2 text-xl font-bold uppercase leading-none text-white/80 sm:text-2xl">{t.venueSectionLocation}</p>
+
+          <div className="mt-7 rounded-2xl border border-white/15 bg-white/[0.06] p-4 shadow-[0_24px_80px_rgba(0,0,0,0.5)] backdrop-blur-[2px] sm:p-6">
+            <div className="grid gap-6 lg:grid-cols-[1fr_332px] lg:items-end">
+              <div>
+              <Image
+                src={centaraVenue}
+                alt={t.venueSectionTitle}
+                sizes="(max-width: 1024px) 100vw, 780px"
+                className="h-[220px] w-full rounded-xl border border-white/20 object-cover sm:h-[260px] lg:h-[290px]"
+              />
+              <p className="mt-5 max-w-[820px] text-lg leading-relaxed text-white/90 sm:text-xl">
+                {t.venueSectionDescription}
+              </p>
+              </div>
+
+              <aside className="w-full rounded-xl border border-white/20 bg-black/55 p-4 text-white shadow-[0_8px_30px_rgba(0,0,0,0.45)] sm:p-5">
+                <h3 className="text-2xl font-extrabold uppercase leading-tight">{t.venueSectionBookingTitle}</h3>
+                <p className="mt-2 text-xl font-semibold italic leading-tight text-white/80">{t.venueSectionBookingDate}</p>
+                <Link
+                  href="/venue/hotel-reservation"
+                  className="mt-5 inline-flex h-14 w-full items-center justify-center rounded-md bg-pink-500 px-5 text-xl font-extrabold uppercase text-white transition-colors hover:bg-pink-400"
+                >
+                  {t.venueSectionReadMore}
+                </Link>
+              </aside>
+            </div>
+          </div>
+
+          <div className="mt-8 border-t border-white/15 pt-8">
+            <div className="grid gap-8 md:grid-cols-2 md:gap-10">
+              <article>
+                <h3 className="text-2xl font-extrabold uppercase leading-tight text-lime-300">{t.venueSectionNearbyTitle}</h3>
+                <p className="mt-3 text-lg leading-relaxed text-white/90 sm:text-xl">{t.venueSectionNearbyBody}</p>
+              </article>
+
+              <article>
+                <h3 className="text-2xl font-extrabold uppercase leading-tight text-lime-300">{t.venueSectionShuttleTitle}</h3>
+                <p className="mt-3 text-lg leading-relaxed text-white/90 sm:text-xl">{t.venueSectionShuttleBody}</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
