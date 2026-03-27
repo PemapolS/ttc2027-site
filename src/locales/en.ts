@@ -38,7 +38,7 @@ const en = {
   heroThemeName: 'Thaitails : Binary Breach',
   heroMainTitlePrefix: 'THAITAILS',
   heroMainTitleYear: '2027',
-  heroMainDate: '20 - 21 MARCH 2027',
+  heroMainDate: '20 – 21 MARCH 2027',
   heroVenue: 'TEST VENUE',
   venueSectionLabel: 'Venue',
   venueSectionTitle: 'TEST VENUE',
